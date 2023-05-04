@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Home</title>
+    </head>
+
+    <body>
+
+        <h1>Suas tarefas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Data de vencimento</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Task 1</td>
+                    <td>Task 1 Description</td>
+                    <td>2023-05-03</td>
+                    <td>Vence hoje</td>
+                    <td><button>Concluir</button></td>
+                </tr>
+                <tr>
+                    <td>Task 2</td>
+                    <td>Task 2 Description</td>
+                    <td>2023-05-05</td>
+                    <td>Em andamento</td>
+                    <td><button>Concluir</button></td>
+                </tr>
+                <tr>
+                    <td>Task 3</td>
+                    <td>Task 3 Description</td>
+                    <td>2023-05-10</td>
+                    <td>Aguardando</td>
+                    <td><button>Concluir</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+
+</html>
+
+<style>
+
+    body {
+        font-family: Arial;
+        font-size: 18px;
+    }
+
+    h1 {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 7px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 50px;
+    }
+
+    thead th {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+        background-color: #f2f2f2;
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+
+    tbody tr {
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    tbody tr td:nth-child(4) {
+        color: #f00;
+        font-weight: bold;
+    }
+
+    tbody tr td button {
+        background-color: #28B463;
+        border: none;
+        border-radius: 7px;
+        padding: 7px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>
