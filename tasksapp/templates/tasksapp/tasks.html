@@ -2,14 +2,14 @@
 <html>
 
     <head>
-        <title>Home</title>
+        <title>Tarefas</title>
     </head>
 
     <body>
 
-        <h1>Tarefas de hoje</h1>
+        <h1>Todas as tarefas</h1>
         <a href="/cadastro">Cadastrar tarefa</a>
-        <a href="/tarefas">Ver todas as tarefas</a>
+        <a href="/">Ver tarefas de hoje</a>
         <table>
             <thead>
                 <tr>
@@ -21,30 +21,24 @@
                 </tr>
             </thead>
             <tbody>
-                {% if tasks %}
-                    {% for task in tasks %}
-                        <tr>
-                            {% if task.completed == True %}
-                                <td class="done-task">{{ task.title }}</td>
-                                <td class="done-task">{{ task.description }}</td>
-                                <td class="done-task">{{ task.due_date }}</td>
-                                <td class="done-task finished-status">Finalizada</td>
-                                <td class="task-to-do"><button>Desfazer</button></td>
-                            {% endif %}
-                            {% if task.completed == False %}
-                                <td class="task-to-do">{{ task.title }}</td>
-                                <td class="task-to-do">{{ task.description }}</td>
-                                <td class="task-to-do">{{ task.due_date }}</td>
-                                <td class="task-to-do to-do-status">A fazer</td>
-                                <td class="task-to-do"><button>Concluir</button></td>
-                            {% endif %}
-                        </tr>
-                    {% endfor %}
-                {% else %}
-                        <tr>
-                            <td>Nenhuma atividade para hoje</td>
-                        </tr>
-                {% endif %}
+                {% for task in tasks %}
+                    <tr>
+                        {% if task.completed == True %}
+                            <td class="done-task">{{ task.title }}</td>
+                            <td class="done-task">{{ task.description }}</td>
+                            <td class="done-task">{{ task.due_date }}</td>
+                            <td class="done-task finished-status">Finalizada</td>
+                            <td class="task-to-do undo-button"><button>Desfazer</button></td>
+                        {% endif %}
+                        {% if task.completed == False %}
+                            <td class="task-to-do">{{ task.title }}</td>
+                            <td class="task-to-do">{{ task.description }}</td>
+                            <td class="task-to-do">{{ task.due_date }}</td>
+                            <td class="task-to-do to-do-status">A fazer</td>
+                            <td class="task-to-do do-button"><button>Concluir</button></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
 
@@ -99,6 +93,10 @@
         color: white;
         font-weight: bold;
         cursor: pointer;
+    }
+
+    tbody tr td button:hover {
+        background-color: #7DCEA0;
     }
 
     a {

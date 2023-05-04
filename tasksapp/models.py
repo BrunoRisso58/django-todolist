@@ -5,3 +5,6 @@ class TaskModel(models.Model):
     description = models.TextField(blank=True, null=True)
     due_date = models.DateField(blank=True, null=True)
     completed = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.title
